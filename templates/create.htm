@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+{% block body %}
+<a href="/logout"><button type="submit"  class="btn">Logout</button></a>
+    <div class="cont">
+        <div class="form sign-in">
+            <form method="post" action="/post">
+                {% csrf_token %}
+            <h2>Create Post</h2>
+            <label>
+                <span>Username</span>
+                <input type="text" name="username">
+            </label>
+            <label>
+                <span>Text</span>
+                <input type="text" name="text">
+            </label>
+            <button class="submit" type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="sub-cont">
+            <div class="img">
+                <div class="img-text m-up">
+                    <h2>New here?</h2>
+                    <p>Sign up and discover great amount of new opportunities!</p>
+                </div>
+                <div class="img-text m-in">
+                    <h2>One of us?</h2>
+                    <p>If you already has an account, just sign in. We've missed you!</p>
+                </div>
+                <div class="img-btn">
+                    <span class="m-up">Product</span>
+                    <span class="m-in">Post</span>
+                </div>
+            </div>
+            <div class="form sign-up">
+                 <form method="post" action="/product">
+                    {% csrf_token %}
+                <h2>Create Product</h2>
+                <label>
+                    <span>Product Name</span>
+                    <input name="pname" type="text" required>
+                </label>
+                <label>
+                    <span>Weight</span>
+                    <input name="weight" type="text"  required>
+                </label>
+                <label>
+                    <span>Price</span>
+                    <input name="price" type="text" required>
+                </label>
+                <button type="submit" class="submit">Submit</button>
+                 </form>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
